@@ -18,7 +18,7 @@ function signIn(event){
     userMsg.innerText = "";
     passMsg.innerText = "";
     event.preventDefault();
-    if(userName.value.length === 0 || userName.value.indexOf("@") === -1 || userName.value.indexOf(".") === -1){
+    if(userName.value.length === 0 || userName.value.length <= 4 ||userName.value.indexOf("@") === -1 || userName.value.indexOf(".") === -1){
         userMsg.innerText = "PLEASE ENTER YOUR EMAIL";
         ifsendData = false;
     }
