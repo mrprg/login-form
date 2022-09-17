@@ -30,13 +30,23 @@ function signIn(event){
         ifsendData = false;
     }
 
-    if (passWord.value.length === 0) {
+    // if (passWord.value.length === 0) {
+    //     passMsg.innerText = "PLEASE ENTER A PASSWORD";
+    //     ifsendData = false;
+    
+
+    const passRegex = /^[A-Za-z]\w{7,14}$/
+    if (passRegex.test(passWord.value)) {
+        ifsendData = true;
+    } else if (passWord.value.length === 0) {
         passMsg.innerText = "PLEASE ENTER A PASSWORD";
         ifsendData = false;
     } else if (passWord.value.length <= 4) {
         passMsg.innerText = "PASSWORD IS TO SHORT";
         ifsendData = false;
     }
+
+
 
     if (ifsendData) {
         const body = JSON.stringify({
