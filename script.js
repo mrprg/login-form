@@ -21,7 +21,7 @@ function signIn(event){
 
     const userRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if (userRegex.test(userName.value)) {
-        ifsendData = true;
+       ifsendData = true;
     } else {
         userMsg.innerText = "PLEASE ENTER YOUR EMAIL";
         ifsendData = false;
