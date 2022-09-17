@@ -18,7 +18,14 @@ function signIn(event){
     userMsg.innerText = "";
     passMsg.innerText = "";
     event.preventDefault();
-    if(userName.value.length === 0 || userName.value.length <= 4 ||userName.value.indexOf("@") === -1 || userName.value.indexOf(".") === -1){
+    // if(userName.value.length === 0 || userName.value.length <= 4 ||userName.value.indexOf("@") === -1 || userName.value.indexOf(".") === -1){
+    //     userMsg.innerText = "PLEASE ENTER YOUR EMAIL";
+    //     ifsendData = false;
+    // }
+    const userRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if (userRegex.test(userName.value)) {
+        ifsendData = true;
+    } else {
         userMsg.innerText = "PLEASE ENTER YOUR EMAIL";
         ifsendData = false;
     }
